@@ -20,10 +20,11 @@ repositories {
 
 dependencies {
     androidTestApt project(':EventBusAnnotationProcessor')
-    androidTestCompile project(':EventBus')
-    compile fileTree(dir: 'libs', include: '*.jar')
-    androidTestCompile 'com.android.support.test:runner:0.4.1'
-    androidTestCompile 'com.android.support.test:rules:0.4.1'
+    androidTestImplementation project(':EventBus')
+    implementation fileTree(dir: 'libs', include: '*.jar')
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
 }
 
 android {
@@ -47,7 +48,7 @@ android {
 
     defaultConfig {
         testApplicationId "de.greenrobot.event.test"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 }
 
